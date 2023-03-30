@@ -1,0 +1,84 @@
+<!-- Create a sign up page, modal, form, or app screen related to signing up for something. It could be for a volunteer event, contest registration, a giveaway, or anything you can image. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+
+    <style>
+        body {
+            background-color: #4773aa;
+            color: #ffffff;
+            margin: 4px;
+            padding-left: 8px;
+        }
+
+        h2 {
+            font-family: Tahoma, sans-serif;
+        }
+
+        label,
+        input {
+            display: block;
+        }
+
+        label {
+            margin-bottom: 4px;
+            margin-top: 8px;
+            font-family: Tahoma, sans-serif;
+        }
+
+        #signup {
+            margin-top: 8px;
+            font-family: Tahoma, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Please complete every field to sign up.</h2>
+    <form name="signup-form" id="signup-form" required>
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name" required />
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name" required />
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+        <input type="submit" id="signup" value="Sign Up" />
+    </form>
+    <script>
+        const firstName = document.getElementById("first-name");
+        const lastName = document.getElementById("last-name");
+        const email = document.getElementById("email")
+        const password = document.getElementById("password")
+        const signUpForm = document.getElementById("signup-form")
+
+        signUpForm.addEventListener("submit", validate)
+        signUpForm.addEventListener("submit", clear)
+        
+        function validate() {
+            if (firstName.value !== "" || lastName.value !== "" || email.value !== "" || password.value !== "") {
+                console.log(
+                    //store in react state
+                    document.getElementById("first-name").value,
+                    document.getElementById("last-name").value,
+                    document.getElementById("email").value)
+            }
+        };
+
+        function clear() {
+            const inputs = document.querySelectorAll("#first-name, #last-name, #email, #password")
+            inputs.forEach(input => input.value = "");
+        }
+
+    </script>
+
+</body>
+
+</html>

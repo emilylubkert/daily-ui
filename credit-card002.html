@@ -1,0 +1,53 @@
+<!-- Design a credit card checkout form or page. Don't forget the important elements such as the numbers, dates, security numbers, etc. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Checkout</title>
+
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="credit-card002.css">
+</head>
+
+<body>
+    <form class="credit-card">
+        <div class="form-header">
+            <h4 class="title">Credit card information</h4>
+        </div>
+
+        <div class="form-body">
+            <label for="card-name">Name on Card</label>
+            <input type="text" class="card-name" name="card-name">
+            <label for="card-number">Card Number</label>
+            <input type="text" class="card-number" name="card-number">
+            <div class="details-container">
+                <div class="date-fields">
+                    <label for="exp-date">Expiration Date</label>
+                    <input type="date" class="exp-date" name="exp-date" placeholder="MM/YYYY">
+                </div>
+                <div class="cvv-fields">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="cvv" name="cvv">
+                </div>
+
+            </div>
+            <button id="btn" class="proceed-btn"><a href="#"></a>Submit Payment</button>
+        </div>
+    </form>
+</body>
+
+<script>
+    const button = document.getElementById("btn");
+    button.addEventListener("click", submit);
+
+    function submit(){
+        console.log("Payment processed")
+    }
+</script>
+
+</html>
